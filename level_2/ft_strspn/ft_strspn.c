@@ -24,12 +24,10 @@ size_t ft_strspn(const char *s, const char *accept)
 	}
 	return (i);
 }
+ int	main(void)
+ {
+ 	char haystack[] = "This is a test string";
+ 	char accept[] = "tgaThis";
 
-int  main ()
-{
-
-	char *s = "porco zio can";
-	char *a = "orcop izo";
-
-	printf(" %zu", ft_strspn(s,a)); 
-}
+	printf("%zu\n", ft_strspn(haystack, accept));
+ }

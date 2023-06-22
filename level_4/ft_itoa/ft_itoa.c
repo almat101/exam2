@@ -1,52 +1,36 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_itoa(int nbr)
+char	*ft_itoa(int n)
 {
-	int count;
-	int nbr2;
+	int n2 = n;
+	int len = 0;
+	int k = 0;
 	char *res;
-
-	nbr2 = nbr;
-	count = 0;
-
-	if (nbr2 <= 0)
-		count++;
-
-	while (nbr2)
+	if ( n == -2147483648)
+		return ("-2147483648\0");
+	if (n == 0)
+		return ("0\0");
+	if (n2 < 0)
+		len++;
+	while (n2)
 	{
-		nbr2 = nbr2 / 10;
-		count++;
+		len++;
+		n2 /= 10;
 	}
-
-	res = (char *)malloc(count + 1);
+	res = (char *) malloc( len + 1);
+	res[len] = 0;
 	if (!res)
-		return (NULL);
-	res[count]= 0;
-	if ( nbr == 0)
+		return (0);
+	if (n < 0)
 	{
-		res[0] = '0';
-		return res;
+		res[0] = '-'; 
+		n = -n;
 	}
-	if (nbr < 0)
+	while (n)
 	{
-		if (nbr == -2147483648)
-		{
-			res[0]= '-';
-			res[1]= '2';
-			nbr = 147483648;
-		}
-		else
-		{
-			res[0] = '-';
-			nbr = -nbr;
-		}
-	}	
-	while(nbr)
-	{
-		res[--count] = nbr % 10 + 48;
-		nbr /= 10;
+		res[--len] = n % 10 + 48;
+		n /= 10;
 	}
-
-	return res;
+return (res);
 }

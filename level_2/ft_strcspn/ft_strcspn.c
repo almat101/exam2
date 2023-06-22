@@ -25,21 +25,3 @@ size_t ft_strcspn(const char *s, const char *reject)
 	return (i);
 }
 
-int main()
-{
-   //initializing char pointers
- //  const char *str1 = "Learn from trytoprogram.com";
-  // const char *str2 = "rtyn eaL ofm";
- char str1[] = "geeksforgeeks";
- char str2[] = "kfc";
-   //displaying both string
-   printf("str1 = %s\n\n", str1);
-  printf("str2 = %s\n\n", str2);
-
-   printf("Length of str1 consisting only characters "
-          "from str2 = %zu\n", ft_strcspn( str1, str2 ));
-
- }
-
-
-
