@@ -5,14 +5,14 @@ void	ft_putstr(char *str)
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
 }
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int i;
 
@@ -22,45 +22,36 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-int	main(int ac,char **av)
+void	wd(char *s1, char *s2)
 {
-	int i;
-	int j;
-	int wdlen;
+	int wd = 0;
+	int i = 0;
+	int j = 0;
 
-	i = 0;
-	j = 0;
-	wdlen = 0;
-
-	if (ac == 3)
+	while (s1[i])
 	{
-		while (av[1][i])
+		while(s2[j])
 		{
-			while(av[2][j])
+			if (s1[i] == s2[j])
 			{
-				if (av[1][i] == av[2][j])
-				{	
-					wdlen++;
-					break;
-				}
-				j++;
+				wd++;
+				break;
 			}
-			i++;
+		j++;	
 		}
-		if (wdlen == ft_strlen(av[1]))
-			ft_putstr(av[1]);
+	i++;
 	}
-	write(1, "\n", 1);
-	return (0);
+
+	if ( ft_strlen(s1) == wd)
+		ft_putstr(s1);
 }
 
 
 
-
-
-
-
-
-
-
+int main (int ac, char **av)
+{
+	if (ac == 3)
+		wd(av[1],av[2]);
+	write(1, "\n", 1);
+}
 

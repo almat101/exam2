@@ -25,3 +25,13 @@ size_t ft_strcspn(const char *s, const char *reject)
 	return (i);
 }
 
+int main ()
+{
+  
+   const char str1[] = "proNO";
+   const char str2[] = "NO";
+
+
+   printf("First matched character is at %zu\n", ft_strcspn(str1,str2));
+   
+}

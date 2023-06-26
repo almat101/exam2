@@ -28,7 +28,7 @@ char	*ft_strpbrk(const char *s, const char *accept)
 
  int		main(void)
  {
- 	printf("ft: %s\n", ft_strpbrk("This is a string to search in", "qxd"));
+ 	printf("ft: %s\n", ft_strpbrk("This is a string to search in", "ZZZ"));
 
- 	printf("ft: %s\n", ft_strpbrk("This is a string to search in", "iuuuu"));
+ 	printf("ft: %s\n", ft_strpbrk("This is a string to search in", "is"));
  }

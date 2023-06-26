@@ -26,8 +26,8 @@ size_t ft_strspn(const char *s, const char *accept)
 }
  int	main(void)
  {
- 	char haystack[] = "This is a test string";
- 	char accept[] = "tgaThis";
+ 	char haystack[] = "prova";
+ 	char accept[] = "NOprova";
 
 	printf("%zu\n", ft_strspn(haystack, accept));
  }
